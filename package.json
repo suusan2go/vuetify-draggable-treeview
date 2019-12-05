@@ -5,5 +5,31 @@
   "main": "index.js",
   "repository": "https://github.com/suusan2go/vuetify-draggable-treeview.git",
   "author": "suusan2go <ksuzuki180@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/v-draggable-treeview.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/v-draggable-treeview.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/v-draggable-treeview.min.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^6.0.1",
+    "prettier": "^1.19.1",
+    "rollup": "^1.27.8",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-vue": "^5.1.4",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.3",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "vuedraggable": "^2.23.2",
+    "vuetify": "^2.1.13"
+  }
 }
