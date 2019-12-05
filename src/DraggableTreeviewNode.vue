@@ -2,13 +2,13 @@
   <div
     :class="
       `v-treeview-node v-treeview-node--click ${
-        value.children.length === 0 ? 'v-treeview-node--leaf' : ''
+        hasChildren ? '' : 'v-treeview-node--leaf'
       }`
     "
   >
     <div class="v-treeview-node__root" @click="open = !open">
       <i
-        v-if="value.children.length !== 0"
+        v-if="hasChildren"
         role="button"
         class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
         :class="{ 'v-treeview-node__toggle--open': open }"
@@ -88,6 +88,11 @@ export default Vue.extend({
       open: false,
       localValue: { ...this.value } as TreeItem
     };
+  },
+  computed: {
+    hasChildren(): boolean {
+      return this.value.children != null && this.value.children.length > 0;
+    }
   },
   watch: {
     value(value) {
