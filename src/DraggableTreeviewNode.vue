@@ -32,6 +32,7 @@
         @input="updateValue"
       >
         <treeview-node
+          :group="group"
           v-for="child in value.children"
           :key="child.id"
           :value="child"
@@ -84,28 +85,24 @@ export default Vue.extend({
   },
   data() {
     return {
-      open: false
+      open: false,
+      localValue: { ...this.value } as TreeItem
     };
+  },
+  watch: {
+    value(value) {
+      this.localValue = { ...value };
+    }
   },
   methods: {
     updateValue(value: TreeItem[]): void {
-      console.log("updateValue:child");
-      console.log(value);
-      this.$emit("input", {
-        ...this.value,
-        children: value
-      });
+      this.localValue.children = [...value];
+      this.$emit("input", this.localValue);
     },
     updateChildValue(value: TreeItem): void {
-      const newValue = this.value.children.map(c => {
-        if (c.id === value.id) {
-          return value;
-        }
-        return c;
-      });
-      this.updateValue(newValue);
-      console.log("updateChildValue:newValue");
-      console.log(newValue);
+      const index = this.localValue.children.findIndex(c => c.id === value.id);
+      this.$set(this.localValue.children, index, value);
+      this.$emit("input", this.localValue);
     }
   }
 });

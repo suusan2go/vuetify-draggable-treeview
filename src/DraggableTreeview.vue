@@ -1,10 +1,10 @@
 <template>
   <draggable
-    :value="value"
+    :value="localValue"
     :group="group"
     class="v-treeview theme-light v-treeview-draggable"
     ghost-class="ghost"
-    @input="value => $emit('input', value)"
+    @input="updateValue"
   >
     <draggable-tree-view-node
       :group="group"
@@ -48,20 +48,25 @@ export default Vue.extend({
       default: null
     }
   },
+  data() {
+    return {
+      localValue: [...this.value]
+    };
+  },
+  watch: {
+    value(value) {
+      this.localValue = [...value];
+    }
+  },
   methods: {
+    updateValue(value): void {
+      this.localValue = value;
+      this.$emit("input", this.localValue);
+    },
     updateItem(itemValue): void {
-      console.log("itemValue");
-      console.log(itemValue);
-      console.log(itemValue);
-      const newValue = this.value.map(v => {
-        if (v.id === itemValue.id) {
-          return itemValue;
-        }
-        return v;
-      });
-      console.log("newValue");
-      console.log(newValue);
-      this.$emit("input", newValue);
+      const index = this.localValue.findIndex(v => v.id === itemValue.id);
+      this.$set(this.localValue, index, itemValue);
+      this.$emit("input", this.localValue);
     }
   }
 });
