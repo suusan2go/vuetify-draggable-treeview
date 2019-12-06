@@ -13,7 +13,7 @@ export default {
     vue({ css: false }),
     commonjs(),
     typescript({
-      tsconfig: true
+      tsconfig: "./tsconfig.json"
     })
   ]
 };
