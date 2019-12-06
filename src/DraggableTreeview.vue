@@ -7,9 +7,9 @@
     @input="updateValue"
   >
     <draggable-tree-view-node
-      :group="group"
       v-for="item in value"
       :key="item.id"
+      :group="group"
       :value="item"
       @input="updateItem"
     >

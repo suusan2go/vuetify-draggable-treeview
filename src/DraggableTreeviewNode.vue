@@ -32,9 +32,9 @@
         @input="updateValue"
       >
         <treeview-node
-          :group="group"
           v-for="child in value.children"
           :key="child.id"
+          :group="group"
           :value="child"
           @input="updateChildValue"
         >
