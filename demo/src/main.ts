@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import VDraggableTreeView from "vuetify-draggable-treeview";
+import "vuetify/dist/vuetify.css";
 
 Vue.use(VDraggableTreeView);
 
