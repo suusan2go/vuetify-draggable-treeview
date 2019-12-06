@@ -2,7 +2,7 @@ import Vuetify from "vuetify";
 import { mount } from "@vue/test-utils";
 import DraggableTreeview from "../src/DraggableTreeview.vue";
 
-describe("VueDraggableTreeview", () => {
+describe("DraggableTreeview", () => {
   test("renders correctly", () => {
     const wrapper = mount(DraggableTreeview, {
       vuetify: new Vuetify(),

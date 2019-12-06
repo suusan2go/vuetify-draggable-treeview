@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CopyField renders correctly 1`] = `
+exports[`DraggableTreeview renders correctly 1`] = `
 <div
   class="v-treeview theme-light v-treeview-draggable"
 >
