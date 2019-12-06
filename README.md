@@ -1,4 +1,5 @@
 [![Actions Status](https://github.com/suusan2go/vuetify-draggable-treeview/workflows/test/badge.svg)](https://github.com/suusan2go/vuetify-draggable-treeview/actions)
+[![codecov](https://codecov.io/gh/suusan2go/vuetify-draggable-treeview/branch/master/graph/badge.svg)](https://codecov.io/gh/suusan2go/vuetify-draggable-treeview)
 
 # vuetify-draggable-treeview
 Drag and drop `v-treeview` (Vuetify Treeview) component.
