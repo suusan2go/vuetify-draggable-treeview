@@ -47,5 +47,10 @@
     "vuedraggable": "^2.23.2",
     "vuetify": "^2.1.13"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "vue": "*",
+    "vuetify": "*",
+    "vuedraggable": "*"
+  }
 }
