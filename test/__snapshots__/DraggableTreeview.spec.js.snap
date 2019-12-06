@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CopyField renders correctly 1`] = `
+<div
+  class="v-treeview theme-light v-treeview-draggable"
+>
+  <div
+    class="v-treeview-node v-treeview-node--click "
+  >
+    <div
+      class="v-treeview-node__root"
+    >
+      <i
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+        role="button"
+      />
+        
+      <div
+        class="v-treeview-node__label"
+      >
+        
+        test
+      
+      </div>
+       
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
