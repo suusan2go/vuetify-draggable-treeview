@@ -13,8 +13,7 @@ export default {
     vue({ css: false }),
     commonjs(),
     typescript({
-      tsconfig: false,
-      module: "es2015"
+      tsconfig: true
     })
   ]
 };
