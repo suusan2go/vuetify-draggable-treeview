@@ -2,7 +2,7 @@
 
 exports[`DraggableTreeview renders correctly 1`] = `
 <div
-  class="v-treeview theme-light v-treeview-draggable"
+  class="v-treeview v-treeview-draggable theme--light"
 >
   <div
     class="v-treeview-node v-treeview-node--click "

@@ -10,8 +10,12 @@
       <i
         v-if="hasChildren"
         role="button"
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
-        :class="{ 'v-treeview-node__toggle--open': open }"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down"
+        :class="{
+          'v-treeview-node__toggle--open': open,
+          'theme--dark': isDark,
+          'theme--light': !isDark
+        }"
       />
       <slot name="prepend" v-bind="{ item: value, open }" />
       <div class="v-treeview-node__label">
@@ -79,7 +83,7 @@ export default Vue.extend({
       default: (): boolean => false
     },
     group: {
-      type: [String, null],
+      type: String,
       default: null
     }
   },
@@ -92,10 +96,13 @@ export default Vue.extend({
   computed: {
     hasChildren(): boolean {
       return this.value.children != null && this.value.children.length > 0;
+    },
+    isDark(): boolean {
+      return this.$vuetify.theme.isDark;
     }
   },
   watch: {
-    value(value) {
+    value(value): void {
       this.localValue = { ...value };
     }
   },
