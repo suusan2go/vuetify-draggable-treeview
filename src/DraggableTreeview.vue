@@ -2,7 +2,8 @@
   <draggable
     :value="localValue"
     :group="group"
-    class="v-treeview theme-light v-treeview-draggable"
+    class="v-treeview v-treeview-draggable"
+    :class="themeClassName"
     ghost-class="ghost"
     @input="updateValue"
   >
@@ -44,7 +45,7 @@ export default Vue.extend({
       }
     },
     group: {
-      type: [String, null],
+      type: String,
       default: null
     }
   },
@@ -52,6 +53,11 @@ export default Vue.extend({
     return {
       localValue: [...this.value]
     };
+  },
+  computed: {
+    themeClassName(): string {
+      return this.$vuetify.theme.isDark ? "theme--dark" : "theme--light";
+    }
   },
   watch: {
     value(value) {

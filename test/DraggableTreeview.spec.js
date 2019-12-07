@@ -5,7 +5,15 @@ import DraggableTreeview from "../src/DraggableTreeview.vue";
 describe("DraggableTreeview", () => {
   test("renders correctly", () => {
     const wrapper = mount(DraggableTreeview, {
-      vuetify: new Vuetify(),
+      vuetify: new Vuetify({
+        mocks: {
+          $vuetify: {
+            theme: {
+              isDark: false
+            }
+          }
+        }
+      }),
       propsData: {
         value: [
           {
