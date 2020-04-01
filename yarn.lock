@@ -6032,9 +6032,9 @@ vuedraggable@^2.23.2:
     sortablejs "^1.10.1"
 
 vuetify@^2.1.13:
-  version "2.1.15"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.1.15.tgz#26386557c63ad700e6e8d8a330f8d2831fbef6ef"
-  integrity sha512-M35NJvlzkbCpFfsK08xraNvCpiNCIbYUXI/hkzjWHQV1MFIZnjrDTVtYoiudCyJ52zlrhWezAr4pzFOCLAr6RA==
+  version "2.2.20"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.2.20.tgz#8cb042f7274f39130f8d40d85d23d62d1c33cae4"
+  integrity sha512-tiij3ammBiG7QrdwRBJxW917AyDLcMekRtLosdyVshDKHA5CpKrru8Ljn1gAmeUyhYZyUw4gz3XbrrIJ++TP7w==
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
