@@ -58,6 +58,6 @@
   "peerDependencies": {
     "vue": "*",
     "vuedraggable": "*",
-    "vuetify": "*"
+    "vuetify": ">=2.2.0"
   }
 }
