@@ -7,6 +7,7 @@
     "
   >
     <div class="v-treeview-node__root" @click="open = !open">
+      <div v-for="index in level" :key="index" class="v-treeview-node__level" />
       <i
         v-if="hasChildren"
         role="button"
@@ -40,6 +41,7 @@
           :key="child.id"
           :group="group"
           :value="child"
+          :level="level + 1"
           @input="updateChildValue"
         >
           <template v-slot:prepend="{ item, open }">
@@ -70,6 +72,10 @@ export default Vue.extend({
     Draggable
   },
   props: {
+    level: {
+      type: Number,
+      default: 0
+    },
     value: {
       type: Object as PropType<TreeItem>,
       default: (): TreeItem => ({
