@@ -52,7 +52,7 @@
     "vue-jest": "^3.0.5",
     "vue-template-compiler": "^2.6.10",
     "vuedraggable": "^2.23.2",
-    "vuetify": "^2.1.13"
+    "vuetify": "^2.2.25"
   },
   "dependencies": {},
   "peerDependencies": {
