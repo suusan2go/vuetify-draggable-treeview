@@ -53,6 +53,7 @@
           <v-card-title> Using Slot </v-card-title>
           <v-card-text>
             <v-draggable-treeview v-model="items" group="hoge">
+              <!-- eslint-disable-next-line vue/no-unused-vars -->
               <template v-slot:prepend="{ item }">
                 <v-icon>mdi-file</v-icon>
               </template>

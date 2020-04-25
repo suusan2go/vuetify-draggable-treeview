@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "rm -rd node_modules/vuetify-draggable-treeview/node_modules & vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "vue": "^2.6.11",
-    "vuetify": "^2.1.15",
+    "vuetify": "^2.2.25",
     "vuetify-draggable-treeview": "../"
   },
   "devDependencies": {

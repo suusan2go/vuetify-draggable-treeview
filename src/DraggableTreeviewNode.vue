@@ -7,6 +7,11 @@
     "
   >
     <div class="v-treeview-node__root" @click="open = !open">
+      <div
+        v-for="index in appendLevel"
+        :key="index"
+        class="v-treeview-node__level"
+      />
       <i
         v-if="hasChildren"
         role="button"
@@ -40,6 +45,7 @@
           :key="child.id"
           :group="group"
           :value="child"
+          :level="level + 1"
           @input="updateChildValue"
         >
           <template v-slot:prepend="{ item, open }">
@@ -70,6 +76,10 @@ export default Vue.extend({
     Draggable
   },
   props: {
+    level: {
+      type: Number,
+      default: 0
+    },
     value: {
       type: Object as PropType<TreeItem>,
       default: (): TreeItem => ({
@@ -99,6 +109,9 @@ export default Vue.extend({
     },
     isDark(): boolean {
       return this.$vuetify.theme.isDark;
+    },
+    appendLevel(): number {
+      return this.level + (this.hasChildren ? 0 : 1);
     }
   },
   watch: {

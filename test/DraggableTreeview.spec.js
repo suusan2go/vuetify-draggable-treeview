@@ -1,3 +1,4 @@
+import Vue from "vue";
 import Vuetify from "vuetify";
 import { mount } from "@vue/test-utils";
 import DraggableTreeview from "../src/DraggableTreeview.vue";
@@ -19,11 +20,21 @@ describe("DraggableTreeview", () => {
           {
             id: 1,
             name: "test",
-            children: [{ id: 101, name: "test-children" }]
+            children: [
+              {
+                id: 101,
+                name: "test-children",
+                children: [{ id: 201, name: "test-children-children" }]
+              }
+            ]
           }
         ]
       }
     });
     expect(wrapper.element).toMatchSnapshot();
+    wrapper.find(".v-treeview-node__root").trigger("click");
+    Vue.nextTick().then(() => {
+      expect(wrapper.element).toMatchSnapshot();
+    });
   });
 });

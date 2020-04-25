@@ -1,6 +1,6 @@
 {
   "name": "vuetify-draggable-treeview",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "draggable v-treeview component",
   "main": "dist/v-draggable-treeview.umd.js",
   "module": "dist/v-draggable-treeview.esm.js",
@@ -52,12 +52,12 @@
     "vue-jest": "^3.0.5",
     "vue-template-compiler": "^2.6.10",
     "vuedraggable": "^2.23.2",
-    "vuetify": "^2.1.13"
+    "vuetify": "^2.2.25"
   },
   "dependencies": {},
   "peerDependencies": {
     "vue": "*",
     "vuedraggable": "*",
-    "vuetify": "*"
+    "vuetify": ">=2.2.0"
   }
 }
