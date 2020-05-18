@@ -37,4 +37,40 @@ describe("DraggableTreeview", () => {
       expect(wrapper.element).toMatchSnapshot();
     });
   });
+
+  test("renders correctly with divider and changed expand Icon", () => {
+    const wrapper = mount(DraggableTreeview, {
+      vuetify: new Vuetify({
+        mocks: {
+          $vuetify: {
+            theme: {
+              isDark: false
+            }
+          }
+        }
+      }),
+      propsData: {
+        value: [
+          {
+            id: 1,
+            name: "test",
+            children: [
+              {
+                id: 101,
+                name: "test-children",
+                children: [{ id: 201, name: "test-children-children" }]
+              }
+            ]
+          }
+        ],
+        showDivider: true,
+        expandIcon: "mdi-chevron-down"
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+    wrapper.find(".v-treeview-node__root").trigger("click");
+    Vue.nextTick().then(() => {
+      expect(wrapper.element).toMatchSnapshot();
+    });
+  });
 });

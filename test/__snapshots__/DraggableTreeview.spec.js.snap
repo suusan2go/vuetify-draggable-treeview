@@ -12,7 +12,7 @@ exports[`DraggableTreeview renders correctly 1`] = `
     >
        
       <i
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-menu-down"
         role="button"
       />
         
@@ -25,6 +25,8 @@ exports[`DraggableTreeview renders correctly 1`] = `
       </div>
        
     </div>
+     
+    <!---->
      
     <!---->
   </div>
@@ -43,7 +45,7 @@ exports[`DraggableTreeview renders correctly 2`] = `
     >
        
       <i
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down v-treeview-node__toggle--open theme--light"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi v-treeview-node__toggle--open theme--light mdi-menu-down"
         role="button"
       />
         
@@ -56,6 +58,8 @@ exports[`DraggableTreeview renders correctly 2`] = `
       </div>
        
     </div>
+     
+    <!---->
      
     <div
       class="v-treeview-node__children v-treeview-node__children__draggable"
@@ -72,7 +76,7 @@ exports[`DraggableTreeview renders correctly 2`] = `
             />
              
             <i
-              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-menu-down"
               role="button"
             />
               
@@ -85,6 +89,120 @@ exports[`DraggableTreeview renders correctly 2`] = `
             </div>
              
           </div>
+           
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DraggableTreeview renders correctly with divider and changed expand Icon 1`] = `
+<div
+  class="v-treeview v-treeview-draggable theme--light"
+>
+  <div
+    class="v-treeview-node v-treeview-node--click "
+  >
+    <div
+      class="v-treeview-node__root"
+    >
+       
+      <i
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-chevron-down"
+        role="button"
+      />
+        
+      <div
+        class="v-treeview-node__label"
+      >
+        
+        test
+      
+      </div>
+       
+    </div>
+     
+    <hr
+      aria-orientation="horizontal"
+      class="v-divider theme--light"
+      role="separator"
+    />
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`DraggableTreeview renders correctly with divider and changed expand Icon 2`] = `
+<div
+  class="v-treeview v-treeview-draggable theme--light"
+>
+  <div
+    class="v-treeview-node v-treeview-node--click "
+  >
+    <div
+      class="v-treeview-node__root"
+    >
+       
+      <i
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi v-treeview-node__toggle--open theme--light mdi-chevron-down"
+        role="button"
+      />
+        
+      <div
+        class="v-treeview-node__label"
+      >
+        
+        test
+      
+      </div>
+       
+    </div>
+     
+    <hr
+      aria-orientation="horizontal"
+      class="v-divider theme--light"
+      role="separator"
+    />
+     
+    <div
+      class="v-treeview-node__children v-treeview-node__children__draggable"
+    >
+      <div>
+        <div
+          class="v-treeview-node v-treeview-node--click "
+        >
+          <div
+            class="v-treeview-node__root"
+          >
+            <div
+              class="v-treeview-node__level"
+            />
+             
+            <i
+              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-chevron-down"
+              role="button"
+            />
+              
+            <div
+              class="v-treeview-node__label"
+            >
+              
+        test-children
+      
+            </div>
+             
+          </div>
+           
+          <hr
+            aria-orientation="horizontal"
+            class="v-divider theme--light"
+            role="separator"
+          />
            
           <!---->
         </div>

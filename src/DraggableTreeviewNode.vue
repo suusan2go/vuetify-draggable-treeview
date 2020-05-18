@@ -15,12 +15,15 @@
       <i
         v-if="hasChildren"
         role="button"
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down"
-        :class="{
-          'v-treeview-node__toggle--open': open,
-          'theme--dark': isDark,
-          'theme--light': !isDark
-        }"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi"
+        :class="[
+          {
+            'v-treeview-node__toggle--open': open,
+            'theme--dark': isDark,
+            'theme--light': !isDark
+          },
+          expandIcon
+        ]"
       />
       <slot name="prepend" v-bind="{ item: value, open }" />
       <div class="v-treeview-node__label">
@@ -30,6 +33,16 @@
       </div>
       <slot name="append" v-bind="{ item: value }" />
     </div>
+    <hr
+      v-if="showDivider"
+      role="separator"
+      aria-orientation="horizontal"
+      class="v-divider"
+      :class="{
+        'theme--dark': isDark,
+        'theme--light': !isDark
+      }"
+    />
     <div
       v-if="open"
       class="v-treeview-node__children v-treeview-node__children__draggable"
@@ -46,6 +59,8 @@
           :group="group"
           :value="child"
           :level="level + 1"
+          :expand-icon="expandIcon"
+          :show-divider="showDivider"
           @input="updateChildValue"
         >
           <template v-slot:prepend="{ item, open }">
@@ -95,6 +110,14 @@ export default Vue.extend({
     group: {
       type: String,
       default: null
+    },
+    expandIcon: {
+      type: String,
+      default: "mdi-menu-down"
+    },
+    showDivider: {
+      type: Boolean,
+      default: (): boolean => false
     }
   },
   data() {

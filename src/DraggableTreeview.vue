@@ -12,6 +12,8 @@
       :key="item.id"
       :group="group"
       :value="item"
+      :expand-icon="expandIcon"
+      :show-divider="showDivider"
       @input="updateItem"
     >
       <template v-slot:prepend="{ item, open }">
@@ -47,6 +49,14 @@ export default Vue.extend({
     group: {
       type: String,
       default: null
+    },
+    expandIcon: {
+      type: String,
+      default: "mdi-menu-down"
+    },
+    showDivider: {
+      type: Boolean,
+      default: (): boolean => false
     }
   },
   data() {
