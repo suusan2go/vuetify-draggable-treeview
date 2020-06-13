@@ -2783,7 +2783,7 @@ file-entry-cache@^5.0.1:
   dependencies:
     flat-cache "^2.0.1"
 
-file-loader@^4.2.0:
+file-loader@^4.0.0, file-loader@^4.2.0:
   version "4.3.0"
   resolved "https://registry.npm.taobao.org/file-loader/download/file-loader-4.3.0.tgz#780f040f729b3d18019f20605f723e844b8a58af"
   integrity sha1-eA8ED3KbPRgBnyBgX3I+hEuKWK8=
@@ -7464,11 +7464,12 @@ vue@^2.6.11:
 vuetify-draggable-treeview@../:
   version "0.0.4"
 
-vuetify-loader@^1.3.0:
-  version "1.4.3"
-  resolved "https://registry.npm.taobao.org/vuetify-loader/download/vuetify-loader-1.4.3.tgz#df1323c558be09890877e5fbe817b3a71a6c538d"
-  integrity sha1-3xMjxVi+CYkId+X76BezpxpsU40=
+vuetify-loader@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/vuetify-loader/-/vuetify-loader-1.4.4.tgz#f31196c631f259f3e42cc1a892ed8ea4594a42ee"
+  integrity sha512-ryEtVZ/t+zvTM9UscEX5mWsbTOH5HGWITxlysYkkXtcgzgV21t7rRLHBhReH8oMBYddAij4AOosimhcfKnxFHQ==
   dependencies:
+    file-loader "^4.0.0"
     loader-utils "^1.2.0"
 
 vuetify@^2.2.29:
