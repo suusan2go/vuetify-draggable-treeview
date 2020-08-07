@@ -35,34 +35,34 @@ import DraggableTreeViewNode from "./DraggableTreeviewNode.vue";
 export default Vue.extend({
   components: {
     draggable,
-    DraggableTreeViewNode
+    DraggableTreeViewNode,
   },
   props: {
     value: {
       type: Array as PropType<{ id: string | number }[]>,
       default: (): { id: string | number }[] => {
         return [];
-      }
+      },
     },
     group: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
-      localValue: [...this.value]
+      localValue: [...this.value],
     };
   },
   computed: {
     themeClassName(): string {
       return this.$vuetify.theme.isDark ? "theme--dark" : "theme--light";
-    }
+    },
   },
   watch: {
     value(value) {
       this.localValue = [...value];
-    }
+    },
   },
   methods: {
     updateValue(value): void {
@@ -70,10 +70,10 @@ export default Vue.extend({
       this.$emit("input", this.localValue);
     },
     updateItem(itemValue): void {
-      const index = this.localValue.findIndex(v => v.id === itemValue.id);
+      const index = this.localValue.findIndex((v) => v.id === itemValue.id);
       this.$set(this.localValue, index, itemValue);
       this.$emit("input", this.localValue);
-    }
-  }
+    },
+  },
 });
 </script>
