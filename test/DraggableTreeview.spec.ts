@@ -10,10 +10,10 @@ describe("DraggableTreeview", () => {
         mocks: {
           $vuetify: {
             theme: {
-              isDark: false
-            }
-          }
-        }
+              isDark: false,
+            },
+          },
+        },
       }),
       propsData: {
         value: [
@@ -24,12 +24,12 @@ describe("DraggableTreeview", () => {
               {
                 id: 101,
                 name: "test-children",
-                children: [{ id: 201, name: "test-children-children" }]
-              }
-            ]
-          }
-        ]
-      }
+                children: [{ id: 201, name: "test-children-children" }],
+              },
+            ],
+          },
+        ],
+      },
     });
     expect(wrapper.element).toMatchSnapshot();
     wrapper.find(".v-treeview-node__root").trigger("click");
