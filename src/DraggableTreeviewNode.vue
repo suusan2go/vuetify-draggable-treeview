@@ -49,6 +49,9 @@
           <template v-slot:prepend="{ item, open }">
             <slot name="prepend" v-bind="{ item, open }" />
           </template>
+          <template v-slot:label="{ item, open }">
+            <slot name="label" v-bind="{ item, open }"></slot>
+          </template>
           <template v-slot:append="{ item }">
             <slot name="append" v-bind="{ item }" />
           </template>

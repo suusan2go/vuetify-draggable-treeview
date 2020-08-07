@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DraggableTreeview renders correctly 1`] = `
+<div
+  class="v-treeview v-treeview-draggable theme--light"
+>
+  <div
+    class="v-treeview-node v-treeview-node--click "
+  >
+    <div
+      class="v-treeview-node__root"
+    >
+       
+      <i
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+        role="button"
+      />
+        
+      <div
+        class="v-treeview-node__label"
+      >
+        
+        test
+      
+      </div>
+       
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`DraggableTreeview renders correctly 2`] = `
+<div
+  class="v-treeview v-treeview-draggable theme--light"
+>
+  <div
+    class="v-treeview-node v-treeview-node--click "
+  >
+    <div
+      class="v-treeview-node__root"
+    >
+       
+      <i
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down v-treeview-node__toggle--open theme--light"
+        role="button"
+      />
+        
+      <div
+        class="v-treeview-node__label"
+      >
+        
+        test
+      
+      </div>
+       
+    </div>
+     
+    <div
+      class="v-treeview-node__children v-treeview-node__children__draggable"
+    >
+      <div>
+        <div
+          class="v-treeview-node v-treeview-node--click "
+        >
+          <div
+            class="v-treeview-node__root"
+          >
+            <div
+              class="v-treeview-node__level"
+            />
+             
+            <i
+              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+              role="button"
+            />
+              
+            <div
+              class="v-treeview-node__label"
+            >
+              
+        test-children
+      
+            </div>
+             
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DraggableTreeview renders correctly with slot 1`] = `
+<div
+  class="v-treeview v-treeview-draggable theme--light"
+>
+  <div
+    class="v-treeview-node v-treeview-node--click "
+  >
+    <div
+      class="v-treeview-node__root"
+    >
+       
+      <i
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+        role="button"
+      />
+        
+      <div
+        class="v-treeview-node__label"
+      >
+        <span
+          class="primary--text"
+        >
+          test
+        </span>
+      </div>
+       
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`DraggableTreeview renders correctly with slot 2`] = `
+<div
+  class="v-treeview v-treeview-draggable theme--light"
+>
+  <div
+    class="v-treeview-node v-treeview-node--click "
+  >
+    <div
+      class="v-treeview-node__root"
+    >
+       
+      <i
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down v-treeview-node__toggle--open theme--light"
+        role="button"
+      />
+        
+      <div
+        class="v-treeview-node__label"
+      >
+        <span
+          class="primary--text"
+        >
+          test
+        </span>
+      </div>
+       
+    </div>
+     
+    <div
+      class="v-treeview-node__children v-treeview-node__children__draggable"
+    >
+      <div>
+        <div
+          class="v-treeview-node v-treeview-node--click "
+        >
+          <div
+            class="v-treeview-node__root"
+          >
+            <div
+              class="v-treeview-node__level"
+            />
+             
+            <i
+              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+              role="button"
+            />
+              
+            <div
+              class="v-treeview-node__label"
+            >
+              <span
+                class="primary--text"
+              >
+                test-children
+              </span>
+            </div>
+             
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
