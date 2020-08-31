@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "vue": "^2.6.12",
-    "vuetify": "^2.3.8",
+    "vuetify": "^2.3.10",
     "vuetify-draggable-treeview": "../"
   },
   "devDependencies": {
