@@ -1,10 +1,8 @@
 <template>
   <div
-    :class="
-      `v-treeview-node v-treeview-node--click ${
-        hasChildren ? '' : 'v-treeview-node--leaf'
-      }`
-    "
+    :class="`v-treeview-node v-treeview-node--click ${
+      hasChildren ? '' : 'v-treeview-node--leaf'
+    }`"
   >
     <div class="v-treeview-node__root" @click="open = !open">
       <div
@@ -55,6 +53,9 @@
           <template v-slot:prepend="{ item, open }">
             <slot name="prepend" v-bind="{ item, open }" />
           </template>
+          <template v-slot:label="{ item, open }">
+            <slot name="label" v-bind="{ item, open }"></slot>
+          </template>
           <template v-slot:append="{ item }">
             <slot name="append" v-bind="{ item }" />
           </template>
@@ -77,38 +78,38 @@ type TreeItem = {
 export default Vue.extend({
   name: "TreeviewNode",
   components: {
-    Draggable
+    Draggable,
   },
   props: {
     level: {
       type: Number,
-      default: 0
+      default: 0,
     },
     value: {
       type: Object as PropType<TreeItem>,
       default: (): TreeItem => ({
         id: 0,
         name: "",
-        children: []
-      })
+        children: [],
+      }),
     },
     root: {
       type: Boolean,
-      default: (): boolean => false
+      default: (): boolean => false,
     },
     group: {
       type: String,
-      default: null
+      default: null,
     },
     expandIcon: {
-      type: String,
-      default: "mdi-menu-down"
-    }
+        type: String,
+        default: "mdi-menu-down"
+    },
   },
   data() {
     return {
       open: false,
-      localValue: { ...this.value } as TreeItem
+      localValue: { ...this.value } as TreeItem,
     };
   },
   computed: {
@@ -120,12 +121,12 @@ export default Vue.extend({
     },
     appendLevel(): number {
       return this.level + (this.hasChildren ? 0 : 1);
-    }
+    },
   },
   watch: {
     value(value): void {
       this.localValue = { ...value };
-    }
+    },
   },
   methods: {
     updateValue(value: TreeItem[]): void {
@@ -133,10 +134,12 @@ export default Vue.extend({
       this.$emit("input", this.localValue);
     },
     updateChildValue(value: TreeItem): void {
-      const index = this.localValue.children.findIndex(c => c.id === value.id);
+      const index = this.localValue.children.findIndex(
+        (c) => c.id === value.id
+      );
       this.$set(this.localValue.children, index, value);
       this.$emit("input", this.localValue);
-    }
-  }
+    },
+  },
 });
 </script>

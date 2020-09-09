@@ -1,13 +1,13 @@
 import component from "./DraggableTreeview.vue";
 
-export const install = Vue => {
+export const install = (Vue) => {
   if (install.installed) return;
   install.installed = true;
   Vue.component("VDraggableTreeview", component);
 };
 
 const plugin = {
-  install
+  install,
 };
 
 let GlobalVue = null;

@@ -10,10 +10,10 @@ describe("DraggableTreeview", () => {
         mocks: {
           $vuetify: {
             theme: {
-              isDark: false
-            }
-          }
-        }
+              isDark: false,
+            },
+          },
+        },
       }),
       propsData: {
         value: [
@@ -24,12 +24,12 @@ describe("DraggableTreeview", () => {
               {
                 id: 101,
                 name: "test-children",
-                children: [{ id: 201, name: "test-children-children" }]
-              }
-            ]
-          }
-        ]
-      }
+                children: [{ id: 201, name: "test-children-children" }],
+              },
+            ],
+          },
+        ],
+      },
     });
     expect(wrapper.element).toMatchSnapshot();
     wrapper.find(".v-treeview-node__root").trigger("click");
@@ -38,17 +38,28 @@ describe("DraggableTreeview", () => {
     });
   });
 
-  test("renders correctly with changed expand Icon", () => {
+  test("renders correctly with slot", () => {
     const wrapper = mount(DraggableTreeview, {
       vuetify: new Vuetify({
         mocks: {
           $vuetify: {
             theme: {
-              isDark: false
-            }
-          }
-        }
+              isDark: false,
+            },
+          },
+        },
       }),
+      scopedSlots: {
+        label({ item }: any) {
+          return this.$createElement(
+            "span",
+            {
+              attrs: { class: "primary--text" },
+            },
+            [item.name]
+          );
+        },
+      },
       propsData: {
         value: [
           {
@@ -58,13 +69,12 @@ describe("DraggableTreeview", () => {
               {
                 id: 101,
                 name: "test-children",
-                children: [{ id: 201, name: "test-children-children" }]
-              }
-            ]
-          }
+                children: [{ id: 201, name: "test-children-children" }],
+              },
+            ],
+          },
         ],
-        expandIcon: "mdi-chevron-down"
-      }
+      },
     });
     expect(wrapper.element).toMatchSnapshot();
     wrapper.find(".v-treeview-node__root").trigger("click");
