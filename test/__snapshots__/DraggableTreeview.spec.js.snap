@@ -27,8 +27,6 @@ exports[`DraggableTreeview renders correctly 1`] = `
     </div>
      
     <!---->
-     
-    <!---->
   </div>
 </div>
 `;
@@ -58,8 +56,6 @@ exports[`DraggableTreeview renders correctly 2`] = `
       </div>
        
     </div>
-     
-    <!---->
      
     <div
       class="v-treeview-node__children v-treeview-node__children__draggable"
@@ -91,8 +87,6 @@ exports[`DraggableTreeview renders correctly 2`] = `
           </div>
            
           <!---->
-           
-          <!---->
         </div>
       </div>
     </div>
@@ -100,7 +94,7 @@ exports[`DraggableTreeview renders correctly 2`] = `
 </div>
 `;
 
-exports[`DraggableTreeview renders correctly with divider and changed expand Icon 1`] = `
+exports[`DraggableTreeview renders correctly with changed expand Icon 1`] = `
 <div
   class="v-treeview v-treeview-draggable theme--light"
 >
@@ -126,18 +120,12 @@ exports[`DraggableTreeview renders correctly with divider and changed expand Ico
        
     </div>
      
-    <hr
-      aria-orientation="horizontal"
-      class="v-divider theme--light"
-      role="separator"
-    />
-     
     <!---->
   </div>
 </div>
 `;
 
-exports[`DraggableTreeview renders correctly with divider and changed expand Icon 2`] = `
+exports[`DraggableTreeview renders correctly with changed expand Icon 2`] = `
 <div
   class="v-treeview v-treeview-draggable theme--light"
 >
@@ -162,12 +150,6 @@ exports[`DraggableTreeview renders correctly with divider and changed expand Ico
       </div>
        
     </div>
-     
-    <hr
-      aria-orientation="horizontal"
-      class="v-divider theme--light"
-      role="separator"
-    />
      
     <div
       class="v-treeview-node__children v-treeview-node__children__draggable"
@@ -197,12 +179,6 @@ exports[`DraggableTreeview renders correctly with divider and changed expand Ico
             </div>
              
           </div>
-           
-          <hr
-            aria-orientation="horizontal"
-            class="v-divider theme--light"
-            role="separator"
-          />
            
           <!---->
         </div>

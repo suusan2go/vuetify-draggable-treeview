@@ -38,7 +38,7 @@ describe("DraggableTreeview", () => {
     });
   });
 
-  test("renders correctly with divider and changed expand Icon", () => {
+  test("renders correctly with changed expand Icon", () => {
     const wrapper = mount(DraggableTreeview, {
       vuetify: new Vuetify({
         mocks: {
@@ -63,7 +63,6 @@ describe("DraggableTreeview", () => {
             ]
           }
         ],
-        showDivider: true,
         expandIcon: "mdi-chevron-down"
       }
     });

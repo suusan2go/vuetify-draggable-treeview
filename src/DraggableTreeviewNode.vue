@@ -33,16 +33,6 @@
       </div>
       <slot name="append" v-bind="{ item: value }" />
     </div>
-    <hr
-      v-if="showDivider"
-      role="separator"
-      aria-orientation="horizontal"
-      class="v-divider"
-      :class="{
-        'theme--dark': isDark,
-        'theme--light': !isDark
-      }"
-    />
     <div
       v-if="open"
       class="v-treeview-node__children v-treeview-node__children__draggable"
@@ -60,7 +50,6 @@
           :value="child"
           :level="level + 1"
           :expand-icon="expandIcon"
-          :show-divider="showDivider"
           @input="updateChildValue"
         >
           <template v-slot:prepend="{ item, open }">
@@ -114,10 +103,6 @@ export default Vue.extend({
     expandIcon: {
       type: String,
       default: "mdi-menu-down"
-    },
-    showDivider: {
-      type: Boolean,
-      default: (): boolean => false
     }
   },
   data() {
