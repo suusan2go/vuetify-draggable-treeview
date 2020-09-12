@@ -18,9 +18,9 @@
           {
             'v-treeview-node__toggle--open': open,
             'theme--dark': isDark,
-            'theme--light': !isDark
+            'theme--light': !isDark,
           },
-          expandIcon
+          expandIcon,
         ]"
       />
       <slot name="prepend" v-bind="{ item: value, open }" />
@@ -102,8 +102,8 @@ export default Vue.extend({
       default: null,
     },
     expandIcon: {
-        type: String,
-        default: "mdi-menu-down"
+      type: String,
+      default: "mdi-menu-down",
     },
   },
   data() {

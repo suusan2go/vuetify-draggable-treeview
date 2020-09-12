@@ -51,8 +51,8 @@ export default Vue.extend({
     },
     expandIcon: {
       type: String,
-      default: "mdi-menu-down"
-    }
+      default: "mdi-menu-down",
+    },
   },
   data() {
     return {
