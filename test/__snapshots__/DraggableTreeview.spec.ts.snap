@@ -12,7 +12,7 @@ exports[`DraggableTreeview renders correctly 1`] = `
     >
        
       <i
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-menu-down"
         role="button"
       />
         
@@ -43,7 +43,7 @@ exports[`DraggableTreeview renders correctly 2`] = `
     >
        
       <i
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down v-treeview-node__toggle--open theme--light"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi v-treeview-node__toggle--open theme--light mdi-menu-down"
         role="button"
       />
         
@@ -72,7 +72,7 @@ exports[`DraggableTreeview renders correctly 2`] = `
             />
              
             <i
-              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-menu-down"
               role="button"
             />
               
@@ -106,7 +106,7 @@ exports[`DraggableTreeview renders correctly with slot 1`] = `
     >
        
       <i
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-menu-down"
         role="button"
       />
         
@@ -139,7 +139,7 @@ exports[`DraggableTreeview renders correctly with slot 2`] = `
     >
        
       <i
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down v-treeview-node__toggle--open theme--light"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi v-treeview-node__toggle--open theme--light mdi-menu-down"
         role="button"
       />
         
@@ -170,7 +170,7 @@ exports[`DraggableTreeview renders correctly with slot 2`] = `
             />
              
             <i
-              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down theme--light"
+              class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi theme--light mdi-menu-down"
               role="button"
             />
               
