@@ -1,6 +1,6 @@
 {
   "name": "vuetify-draggable-treeview",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "draggable v-treeview component",
   "main": "dist/v-draggable-treeview.umd.js",
   "module": "dist/v-draggable-treeview.esm.js",
