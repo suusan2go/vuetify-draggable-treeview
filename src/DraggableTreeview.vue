@@ -12,6 +12,7 @@
       :key="item.id"
       :group="group"
       :value="item"
+      :expand-icon="expandIcon"
       @input="updateItem"
     >
       <template v-slot:prepend="{ item, open }">
@@ -48,6 +49,10 @@ export default Vue.extend({
       type: String,
       default: null,
     },
+    expandIcon: {
+      type: String,
+      default: "mdi-menu-down"
+    }
   },
   data() {
     return {

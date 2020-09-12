@@ -115,6 +115,7 @@ Name | Type | Default | Description
 --- | ---- | ---- | ---
 value | Object | [] | items for treeview. `item-key`, `item-text`, `item-children` are not customizable currently.  `value` can be like `{ id: 1, name: "test", children: []}` .
 group | string | null | group name for vuedraggable. If this props not provided, drag and drop are enabled only in children.
+expand-icon | string | 'mdi-menu-down' |mdi string for the expand icon.
 
 ### Events
 Name | Value  | Description

@@ -13,12 +13,15 @@
       <i
         v-if="hasChildren"
         role="button"
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi mdi-menu-down"
-        :class="{
-          'v-treeview-node__toggle--open': open,
-          'theme--dark': isDark,
-          'theme--light': !isDark,
-        }"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi"
+        :class="[
+          {
+            'v-treeview-node__toggle--open': open,
+            'theme--dark': isDark,
+            'theme--light': !isDark
+          },
+          expandIcon
+        ]"
       />
       <slot name="prepend" v-bind="{ item: value, open }" />
       <div class="v-treeview-node__label">
@@ -44,6 +47,7 @@
           :group="group"
           :value="child"
           :level="level + 1"
+          :expand-icon="expandIcon"
           @input="updateChildValue"
         >
           <template v-slot:prepend="{ item, open }">
@@ -96,6 +100,10 @@ export default Vue.extend({
     group: {
       type: String,
       default: null,
+    },
+    expandIcon: {
+        type: String,
+        default: "mdi-menu-down"
     },
   },
   data() {
