@@ -343,12 +343,12 @@
   resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-4.5.13.tgz#4f1fd2161be8f69d6cba8079f3f0d7dc4dee47a7"
   integrity sha512-jhUIg3klgi5Cxhs8dnat5hi/W2tQJvsqCxR0u6hgfSob0ORODgUBlN+F/uwq7cKIe/pzedVUk1y07F13GQvPqg==
 
-"@vue/cli-plugin-eslint@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.5.9.tgz#7d7f8a48b8e73e6b19fe2f54b39c78850a9ab33d"
-  integrity sha512-wTsWRiRWPW5ik4bgtlh4P4h63Zgjsyvqx2FY0kcj+bSAnQGPJ3bKUOMU9KQP5EyNH6pAXMVGh2LEXK9WwJMf1w==
+"@vue/cli-plugin-eslint@^4.5.13":
+  version "4.5.13"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.5.13.tgz#8baf22d0d96d76720c7506646b96f4f62c05bdfa"
+  integrity sha512-yc2uXX6aBiy3vEf5TwaueaDqQbdIXIhk0x0KzEtpPo23jBdLkpOSoU5NCgE06g/ZiGAcettpmBSv73Hfp4wHEw==
   dependencies:
-    "@vue/cli-shared-utils" "^4.5.9"
+    "@vue/cli-shared-utils" "^4.5.13"
     eslint-loader "^2.2.1"
     globby "^9.2.0"
     inquirer "^7.1.0"
@@ -448,7 +448,7 @@
   optionalDependencies:
     vue-loader-v16 "npm:vue-loader@^16.1.0"
 
-"@vue/cli-shared-utils@^4.5.13", "@vue/cli-shared-utils@^4.5.9":
+"@vue/cli-shared-utils@^4.5.13":
   version "4.5.13"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.5.13.tgz#acd40f31b4790f1634292bdaa5fca95dc1e0ff50"
   integrity sha512-HpnOrkLg42RFUsQGMJv26oTG3J3FmKtO2WSRhKIIL+1ok3w9OjGCtA3nMMXN27f9eX14TqO64M36DaiSZ1fSiw==
