@@ -40,6 +40,7 @@
         :value="value.children"
         ghost-class="ghost"
         @input="updateValue"
+        @change="changeValue"
       >
         <treeview-node
           v-for="child in value.children"
@@ -49,6 +50,7 @@
           :level="level + 1"
           :expand-icon="expandIcon"
           @input="updateChildValue"
+          @changeValue="changeValue"
         >
           <template v-slot:prepend="{ item, open }">
             <slot name="prepend" v-bind="{ item, open }" />
@@ -132,6 +134,9 @@ export default Vue.extend({
     updateValue(value: TreeItem[]): void {
       this.localValue.children = [...value];
       this.$emit("input", this.localValue);
+    },
+    changeValue(event: void) {
+      this.$emit("changeValue", event);
     },
     updateChildValue(value: TreeItem): void {
       const index = this.localValue.children.findIndex(

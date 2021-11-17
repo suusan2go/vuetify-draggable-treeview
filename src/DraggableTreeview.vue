@@ -6,6 +6,7 @@
     :class="themeClassName"
     ghost-class="ghost"
     @input="updateValue"
+    @change="changeValue"
   >
     <draggable-tree-view-node
       v-for="item in value"
@@ -14,6 +15,7 @@
       :value="item"
       :expand-icon="expandIcon"
       @input="updateItem"
+      @changeValue="changeValue"
     >
       <template v-slot:prepend="{ item, open }">
         <slot name="prepend" v-bind="{ item, open }"> </slot>
@@ -73,6 +75,9 @@ export default Vue.extend({
     updateValue(value): void {
       this.localValue = value;
       this.$emit("input", this.localValue);
+    },
+    changeValue(event: void) {
+      this.$emit("change", event);
     },
     updateItem(itemValue): void {
       const index = this.localValue.findIndex((v) => v.id === itemValue.id);
