@@ -13,7 +13,7 @@
       <i
         v-if="hasChildren"
         role="button"
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi material-icons"
         :class="[
           {
             'v-treeview-node__toggle--open': open,
