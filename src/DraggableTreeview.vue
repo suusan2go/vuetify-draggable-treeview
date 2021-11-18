@@ -2,6 +2,7 @@
   <draggable
     :value="localValue"
     :group="group"
+    :handle="handle"
     class="v-treeview v-treeview-draggable"
     :class="themeClassName"
     ghost-class="ghost"
@@ -54,6 +55,10 @@ export default Vue.extend({
     expandIcon: {
       type: String,
       default: "mdi-menu-down",
+    },
+    handle: {
+      type: String,
+      default: null,
     },
   },
   data() {

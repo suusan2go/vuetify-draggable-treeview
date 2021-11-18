@@ -38,6 +38,7 @@
       <draggable
         :group="group"
         :value="value.children"
+        :handle="handle"
         ghost-class="ghost"
         @input="updateValue"
         @change="changeValue"
@@ -106,6 +107,10 @@ export default Vue.extend({
     expandIcon: {
       type: String,
       default: "mdi-menu-down",
+    },
+    handle: {
+      type: String,
+      default: null,
     },
   },
   data() {
