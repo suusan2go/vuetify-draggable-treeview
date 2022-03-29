@@ -13,7 +13,7 @@
       <i
         v-if="hasChildren"
         role="button"
-        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi"
+        class="v-icon notranslate v-treeview-node__toggle v-icon--link mdi material-icons"
         :class="[
           {
             'v-treeview-node__toggle--open': open,
@@ -23,6 +23,18 @@
           expandIcon,
         ]"
       />
+      <button
+        v-if="selectable"
+        type="button"
+        :class="{
+          'value.isSelected': 'accent--text',
+        }"
+        class="v-icon notranslate v-treeview-node__checkbox v-icon--link theme--light mr-2"
+        @click.stop="checkSelect(!value.isSelected)">
+        <svg v-if="value.isIndeterminate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M17,13H7V11H17M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path></svg>
+        <svg v-else-if="!value.isSelected" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z"></path></svg>
+        <svg v-else xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z"></path></svg>
+      </button>
       <slot name="prepend" v-bind="{ item: value, open }" />
       <div class="v-treeview-node__label">
         <slot name="label" v-bind="{ item: value, open }">
@@ -38,8 +50,10 @@
       <draggable
         :group="group"
         :value="value.children"
+        :handle="handle"
         ghost-class="ghost"
         @input="updateValue"
+        @change="changeValue"
       >
         <treeview-node
           v-for="child in value.children"
@@ -48,7 +62,10 @@
           :value="child"
           :level="level + 1"
           :expand-icon="expandIcon"
+          :selectable="selectable"
           @input="updateChildValue"
+          @changeValue="changeValue"
+          @changeSelect="changeSelectChild"
         >
           <template v-slot:prepend="{ item, open }">
             <slot name="prepend" v-bind="{ item, open }" />
@@ -71,7 +88,10 @@ import Draggable from "vuedraggable";
 
 type TreeItem = {
   id: number;
+  parentId: number | null;
   name: string;
+  isSelected: boolean;
+  isIndeterminate: boolean;
   children: TreeItem[];
 };
 
@@ -89,7 +109,10 @@ export default Vue.extend({
       type: Object as PropType<TreeItem>,
       default: (): TreeItem => ({
         id: 0,
+        parentId: null,
         name: "",
+        isSelected: false,
+        isIndeterminate: false,
         children: [],
       }),
     },
@@ -105,6 +128,11 @@ export default Vue.extend({
       type: String,
       default: "mdi-menu-down",
     },
+    handle: {
+      type: String,
+      default: null,
+    },
+    selectable: Boolean,
   },
   data() {
     return {
@@ -133,12 +161,57 @@ export default Vue.extend({
       this.localValue.children = [...value];
       this.$emit("input", this.localValue);
     },
+    changeValue(event: void) {
+      this.$emit("changeValue", event);
+    },
     updateChildValue(value: TreeItem): void {
       const index = this.localValue.children.findIndex(
         (c) => c.id === value.id
       );
       this.$set(this.localValue.children, index, value);
       this.$emit("input", this.localValue);
+    },
+    checkSelect(value: boolean): void {
+      this.localValue.isSelected = value;
+      this.localValue.isIndeterminate = false;
+      if (this.hasChildren) {
+        this.setChildren(this.localValue.children, value);
+      }
+      this.$emit("changeSelect", this.localValue);
+    },
+    setChildren(children: TreeItem[], selected: boolean): void {
+      for (let index = 0; index < children.length; index++) {
+        children[index].isSelected = selected;
+        children[index].isIndeterminate = false;
+        if (children[index].children.length > 0) {
+          this.setChildren(children[index].children, selected);
+        }
+        this.$set(children, index, children[index]);
+      }
+    },
+    checkIndeterminate(children: TreeItem[]): boolean {
+      const unique = this.getCheck(children);
+      return unique.includes(true);
+    },
+    getCheck(children: TreeItem[]): Array<boolean> {
+      return [
+        ...new Set(
+          children.map(
+            (item) =>
+              !(!item.isSelected || typeof item.isSelected === "undefined") ||
+              item.isSelected ||
+              item.isIndeterminate
+          )
+        ),
+      ];
+    },
+    changeSelectChild(value: TreeItem): void {
+      const index = this.localValue.children.findIndex(
+        (c) => c.id === value.id
+      );
+      this.$set(this.localValue.children, index, value);
+      this.localValue.isIndeterminate = this.checkIndeterminate(this.localValue.children);
+      this.$emit("changeSelect", this.localValue);
     },
   },
 });
