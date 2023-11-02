@@ -39,7 +39,7 @@
         :group="group"
         :value="value.children"
         ghost-class="ghost"
-        @input="updateValue"
+        @change="updateValue"
       >
         <treeview-node
           v-for="child in value.children"
@@ -109,7 +109,10 @@ export default Vue.extend({
   data() {
     return {
       open: false,
-      localValue: { ...this.value } as TreeItem,
+      localValue: {
+        ...this.value,
+        children: [...this.value.children],
+      } as TreeItem,
     };
   },
   computed: {
@@ -125,12 +128,30 @@ export default Vue.extend({
   },
   watch: {
     value(value): void {
-      this.localValue = { ...value };
+      this.localValue = {
+        ...value,
+        children: [...this.value.children],
+      };
     },
   },
   methods: {
-    updateValue(value: TreeItem[]): void {
-      this.localValue.children = [...value];
+    updateValue($event: any): void {
+      // removing must be done before adding
+      // in order for the event `moved` to work properly
+      const dataForRemoving = $event.removed || $event.moved;
+      if (dataForRemoving) {
+        this.localValue.children.splice(dataForRemoving.oldIndex, 1);
+      }
+
+      const dataForAdding = $event.added || $event.moved;
+      if (dataForAdding) {
+        this.localValue.children.splice(
+          dataForAdding.newIndex,
+          0,
+          dataForAdding.element
+        );
+      }
+
       this.$emit("input", this.localValue);
     },
     updateChildValue(value: TreeItem): void {
